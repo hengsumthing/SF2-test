@@ -12,6 +12,7 @@ public class NewBehaviourScript : MonoBehaviour {
 	bool crouch = false;
 	bool MH_punch = false;
 	bool H_kick = false;
+	bool shouryoken = false;
 	Animator anim;
 
 	// Use this for initialization
@@ -30,7 +31,7 @@ public class NewBehaviourScript : MonoBehaviour {
 		//hadoken
 		if (Input.GetKeyDown(KeyCode.Z))
 		{
-			transform.Translate(Vector3.up * 2);
+			
 		anim.SetBool("Hadoken", true);
 		}
 		else if (Input.GetKeyUp(KeyCode.Z))
@@ -72,6 +73,18 @@ public class NewBehaviourScript : MonoBehaviour {
 		else if (Input.GetKeyUp(KeyCode.C))
 		{
 			anim.SetBool("H_kick", false);
+		}
+
+		//Shouryoken
+		if (Input.GetKeyDown(KeyCode.V))
+		{
+			transform.Translate(Vector3.up * 2);
+			anim.SetBool("Shouryoken", true);
+
+		}
+		else if (Input.GetKeyUp(KeyCode.V))
+		{
+			anim.SetBool("Shouryoken", false);
 		}
 
 		//movement
