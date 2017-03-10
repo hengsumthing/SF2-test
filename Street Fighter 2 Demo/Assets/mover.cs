@@ -5,6 +5,8 @@ using UnityEngine;
 public class mover : MonoBehaviour {
 	public float speed;
 	private Rigidbody2D rb;
+	public bool facingRight= true;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -14,7 +16,9 @@ public class mover : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		rb = GetComponent<Rigidbody2D> ();
-		rb.velocity = transform.right * speed;
+
+			rb.velocity = transform.right * speed;
+
 		
 	}
 }

@@ -7,12 +7,13 @@ public class NewBehaviourScript : MonoBehaviour {
 	public float Speed = 10f;
 	private float movex = 10f;
 	private float movey = 10f;
-	bool facingRight= true;
+
 	bool hadoken = false;
 	bool crouch = false;
 	bool MH_punch = false;
 	bool H_kick = false;
 	bool shouryoken = false;
+	public bool facingRight= true;
 	Animator anim;
 
 	// Use this for initialization
@@ -33,7 +34,7 @@ public class NewBehaviourScript : MonoBehaviour {
 		{
 		anim.SetBool("Hadoken", true);
 		}
-		 if (Input.GetKeyUp(KeyCode.Z))
+		if (Input.GetKeyUp(KeyCode.Z))
 		{
 			anim.SetBool("Hadoken", false);
 		}
