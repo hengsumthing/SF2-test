@@ -28,13 +28,12 @@ public class NewBehaviourScript : MonoBehaviour {
 		//trigger walk ani
 		anim.SetFloat("Speed", Mathf.Abs(movex));
 
-		//hadoken
+        //hadoken
 		if (Input.GetKeyDown(KeyCode.Z))
 		{
-			
 		anim.SetBool("Hadoken", true);
 		}
-		else if (Input.GetKeyUp(KeyCode.Z))
+		 if (Input.GetKeyUp(KeyCode.Z))
 		{
 			anim.SetBool("Hadoken", false);
 		}
@@ -42,14 +41,14 @@ public class NewBehaviourScript : MonoBehaviour {
 		//crouch
 		if (Input.GetKeyDown(KeyCode.DownArrow))
 		{
-			
-			anim.SetBool("crouch", true);
-
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
+            anim.SetBool("crouch", true);
 		}
-		else if (Input.GetKeyUp(KeyCode.DownArrow))
+		if (Input.GetKeyUp(KeyCode.DownArrow))
 		{
 			anim.SetBool("crouch", false);
-		}
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        }
 
 		//MH_punch
 		if (Input.GetKeyDown(KeyCode.X))
@@ -58,7 +57,7 @@ public class NewBehaviourScript : MonoBehaviour {
 			anim.SetBool("MH_punch", true);
 
 		}
-		else if (Input.GetKeyUp(KeyCode.X))
+		if (Input.GetKeyUp(KeyCode.X))
 		{
 			anim.SetBool("MH_punch", false);
 		}
@@ -70,7 +69,7 @@ public class NewBehaviourScript : MonoBehaviour {
 			anim.SetBool("H_kick", true);
 
 		}
-		else if (Input.GetKeyUp(KeyCode.C))
+		if (Input.GetKeyUp(KeyCode.C))
 		{
 			anim.SetBool("H_kick", false);
 		}
@@ -78,14 +77,27 @@ public class NewBehaviourScript : MonoBehaviour {
 		//Shouryoken
 		if (Input.GetKeyDown(KeyCode.V))
 		{
-			transform.Translate(Vector3.up * 2);
-			anim.SetBool("Shouryoken", true);
+			transform.Translate(Vector3.up * (Speed * Time.deltaTime * 12));
+            if (facingRight == true)
+            {
+                transform.Translate(Vector3.right * (Speed * Time.deltaTime * 5));
+                anim.SetBool("Shouryoken", true);
+            }
+            else if (facingRight == false)
+            {
+                transform.Translate(Vector3.left * (Speed * Time.deltaTime * 5));
+                anim.SetBool("Shouryoken", true);
+            }
 
-		}
-		else if (Input.GetKeyUp(KeyCode.V))
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
+
+        }
+		if (Input.GetKeyUp(KeyCode.V))
 		{
-			anim.SetBool("Shouryoken", false);
-		}
+            //transform.Translate(Vector3.down * (Speed * Time.deltaTime * 4));
+            anim.SetBool("Shouryoken", false);
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        }
 
 		//movement
 		GetComponent<Rigidbody2D>().velocity = new Vector2 (movex * Speed, 0);
