@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Destroyer.cs" />
      <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
+     <Compile Include="Assets\Scripts\character.cs" />
      <Compile Include="Assets\fire.cs" />
      <Compile Include="Assets\mover.cs" />
  <Reference Include="UnityEngine.Analytics">
