@@ -1,0 +1,11 @@
+Q - Light punch
+W - Medium punch
+E - Heavy punch
+
+A - Light kick
+S - Medium kikc
+D - Heavy kick
+
+Z - kick thing
+X - Shouyuken
+C - Hadouken

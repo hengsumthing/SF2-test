@@ -24,7 +24,7 @@ public class Ryu_moveset : character {
             {
              if (keyTimeOut == 0)
              {
-                keyTimeOut =63;
+                keyTimeOut =70;
                   anim.SetBool("Shouryuken", true);
                   isAttacking = true; 
              }
@@ -116,6 +116,68 @@ public class Ryu_moveset : character {
             anim.SetBool("H_kick", false);
             isAttacking = false;
         }
+
+        //forward_H_kick
+        if (Input.GetKeyDown(KeyCode.D) && movex != 0)
+        {
+            if (keyTimeOut == 0)
+            {
+                keyTimeOut = 50;
+                anim.SetBool("forward_H_kick", true);
+                isAttacking = true;
+            }
+        }
+        else if (keyTimeOut == 0)
+        {
+            anim.SetBool("forward_H_kick", false);
+            isAttacking = false;
+        }
+        if (anim.GetBool("forward_H_kick") == true)
+        {
+            isAttacking = true;
+        }
+
+        //forward_M_kick
+        if (Input.GetKeyDown(KeyCode.S) && movex != 0)
+        {
+            if (keyTimeOut == 0)
+            {
+                keyTimeOut = 30;
+                anim.SetBool("forward_M_kick", true);
+                isAttacking = true;
+            }
+        }
+        else if (keyTimeOut == 0)
+        {
+            anim.SetBool("forward_M_kick", false);
+            isAttacking = false;
+        }
+        if (anim.GetBool("forward_M_kick") == true)
+        {
+            isAttacking = true;
+        }
+
+        //forward_L_kick
+        if (Input.GetKeyDown(KeyCode.A) && speed != 0)
+        {
+            if (keyTimeOut == 0)
+            {
+                keyTimeOut = 30;
+                anim.SetBool("forward_L_kick", true);
+                isAttacking = true;
+            }
+        }
+        else if (keyTimeOut == 0)
+        {
+            anim.SetBool("forward_L_kick", false);
+            isAttacking = false;
+        }
+        if (anim.GetBool("forward_L_kick") == true)
+        {
+            isAttacking = true;
+        }
+
+
         //L_punch
         if (Input.GetKeyDown(KeyCode.Q) && movex == 0)
         {
@@ -163,7 +225,65 @@ public class Ryu_moveset : character {
             anim.SetBool("MH_punch", false);
             isAttacking = false;
         }
+        //forward_H_punch
+        if (Input.GetKeyDown(KeyCode.E) && movex != 0)
+        {
+            if (keyTimeOut == 0)
+            {
+                keyTimeOut = 30;
+                anim.SetBool("forward_H_punch", true);
+                isAttacking = true;
+            }
+        }
+        else if (keyTimeOut == 0)
+        {
+            anim.SetBool("forward_H_punch", false);
+            isAttacking = false;
+        }
+        if (anim.GetBool("forward_H_punch") == true)
+        {   
+            isAttacking = true;
+        }
 
+        //forward_M_punch
+        if (Input.GetKeyDown(KeyCode.W) && movex != 0)
+        {
+            if (keyTimeOut == 0)
+            {
+                keyTimeOut = 30;
+                anim.SetBool("forward_M_punch", true);
+                isAttacking = true;
+            }
+        }
+        else if (keyTimeOut == 0)
+        {
+            anim.SetBool("forward_M_punch", false);
+            isAttacking = false;
+        }
+        if (anim.GetBool("forward_M_punch") == true)
+        {
+            isAttacking = true;
+        }
+
+        //forward_L_punch
+        if (Input.GetKeyDown(KeyCode.Q) && speed != 0)
+        {
+            if (keyTimeOut == 0)
+            {
+                keyTimeOut = 30;
+                anim.SetBool("forward_L_punch", true);
+                isAttacking = true;
+            }
+        }
+        else if (keyTimeOut == 0)
+        {
+            anim.SetBool("forward_L_punch", false);
+            isAttacking = false;
+        }
+        if (anim.GetBool("forward_L_punch") == true)
+        {
+            isAttacking = true;
+        }
         //crouch
         if (Input.GetKeyDown(KeyCode.DownArrow) && movex == 0)
         {
