@@ -43,7 +43,7 @@ public class Ryu_moveset : character {
         {
             if (keyTimeOut == 0)
             {
-                keyTimeOut = 63;
+                keyTimeOut = 100;
                 anim.SetBool("spinykick", true);
                 isAttacking = true;
             }
