@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class character : MonoBehaviour {
 	public static float speed=10f;
-	public static float movex = 10f;
+	public static float movex;
 	public static float movey = 10f;
 	public static bool facingRight= true;
 	public static Animator anim;
     public static int keyTimeOut = 0;
     public static bool isAttacking = false;
     public static Rigidbody2D r2d;
-
-
+	public bool grounded = false;
+	public Transform groundCheck;
+	public float groundRadius = 0.2f;
+	public LayerMask whatIsGround;
+	public float jumpForce = 700;
+	public bool jump = false;
 
 
     // Use this for initialization
@@ -25,7 +29,10 @@ public class character : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		
+		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
+		anim.SetBool ("Ground", grounded);
+		anim.SetFloat ("vSpeed", r2d.velocity.y);
+
 		movex = Input.GetAxis ("Horizontal");
 		movey = Input.GetAxis ("Vertical");
 		//trigger walk ani
@@ -42,6 +49,16 @@ public class character : MonoBehaviour {
                 Flip();
         }
 	}
+
+	void Update(){
+		if (grounded && Input.GetKeyDown (KeyCode.UpArrow)) {
+
+				anim.SetBool ("Ground", false);
+				r2d.AddForce (new Vector2 (0, jumpForce));
+		}
+	}
+	
+
 	void Flip()
 	{
             facingRight = !facingRight;
