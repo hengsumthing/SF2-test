@@ -103,7 +103,7 @@ public class Ryu_moveset : character {
             isAttacking = false;
         }
         //h_kick
-		if (Input.GetKeyDown(KeyCode.D) && movex == 0 || Input.GetKeyDown(KeyCode.JoystickButton5) && movex == 0)
+		if (Input.GetKeyDown(KeyCode.D) && movex == 0 || Input.GetKeyDown(KeyCode.JoystickButton4) && movex == 0)
         {
             if (keyTimeOut == 0)
             {
@@ -119,7 +119,7 @@ public class Ryu_moveset : character {
         }
 
         //forward_H_kick
-		if (Input.GetKeyDown(KeyCode.D) && movex != 0 || Input.GetKeyDown(KeyCode.JoystickButton5) && movex != 0)
+		if (Input.GetKeyDown(KeyCode.D) && movex != 0 || Input.GetKeyDown(KeyCode.JoystickButton4) && movex != 0)
         {
             if (keyTimeOut == 0)
             {
@@ -212,7 +212,7 @@ public class Ryu_moveset : character {
         }
 
         //H_punch
-		if (Input.GetKeyDown(KeyCode.E) && movex == 0 || Input.GetKeyDown(KeyCode.JoystickButton10) && movex == 0)
+		if (Input.GetKeyDown(KeyCode.E) && movex == 0 || Input.GetKeyDown(KeyCode.JoystickButton5) && movex == 0)
         {
             if (keyTimeOut == 0)
             {
@@ -227,7 +227,7 @@ public class Ryu_moveset : character {
             isAttacking = false;
         }
         //forward_H_punch
-		if (Input.GetKeyDown(KeyCode.E) && movex != 0 || Input.GetKeyDown(KeyCode.JoystickButton10) && movex != 0)
+		if (Input.GetKeyDown(KeyCode.E) && movex != 0 || Input.GetKeyDown(KeyCode.JoystickButton5) && movex != 0)
         {
             if (keyTimeOut == 0)
             {
