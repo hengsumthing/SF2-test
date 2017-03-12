@@ -19,13 +19,13 @@ public class Ryu_moveset : character {
         {
             r2d.constraints = RigidbodyConstraints2D.None;
         }
-        //shouryoken
-        if (Input.GetKeyDown(KeyCode.V))
+        //shouryuken
+        if (Input.GetKeyDown(KeyCode.X))
             {
              if (keyTimeOut == 0)
              {
                 keyTimeOut =63;
-                  anim.SetBool("Shouryoken", true);
+                  anim.SetBool("Shouryuken", true);
                   isAttacking = true; 
              }
          }
@@ -35,12 +35,29 @@ public class Ryu_moveset : character {
             }
             else if (keyTimeOut == 0)
             {
-                anim.SetBool("Shouryoken", false);
+                anim.SetBool("Shouryuken", false);
                isAttacking = false;
             }
-
-        //hadoken
-        if (Input.GetKeyDown(KeyCode.C))
+        //spinykick
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            if (keyTimeOut == 0)
+            {
+                keyTimeOut = 63;
+                anim.SetBool("spinykick", true);
+                isAttacking = true;
+            }
+        }
+        if (keyTimeOut != 0)
+        {
+            keyTimeOut--;
+        }
+        else if (keyTimeOut == 0)
+        {
+            anim.SetBool("spinykick", false);
+        }
+            //hadoken
+            if (Input.GetKeyDown(KeyCode.C))
         {
             if (keyTimeOut == 0)
             {
@@ -54,9 +71,38 @@ public class Ryu_moveset : character {
             anim.SetBool("Hadoken", false);
             isAttacking = false;
         }
-
+        //L_kick
+        if (Input.GetKeyDown(KeyCode.A) && movex == 0)
+        {
+            if (keyTimeOut == 0)
+            {
+                keyTimeOut = 25;
+                anim.SetBool("LM_kick", true);
+                isAttacking = true;
+            }
+        }
+        else if (keyTimeOut == 0)
+        {
+            anim.SetBool("LM_kick", false);
+            isAttacking = false;
+        }
+        //m_kick
+        if (Input.GetKeyDown(KeyCode.S) && movex == 0)
+        {
+            if (keyTimeOut == 0)
+            {
+                keyTimeOut = 25;
+                anim.SetBool("LM_kick", true);
+                isAttacking = true;
+            }
+        }
+        else if (keyTimeOut == 0)
+        {
+            anim.SetBool("H_kick", false);
+            isAttacking = false;
+        }
         //h_kick
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.D) && movex == 0)
         {
             if (keyTimeOut == 0)
             {
@@ -70,9 +116,24 @@ public class Ryu_moveset : character {
             anim.SetBool("H_kick", false);
             isAttacking = false;
         }
+        //L_punch
+        if (Input.GetKeyDown(KeyCode.Q) && movex == 0)
+        {
+            if (keyTimeOut == 0)
+            {
+                keyTimeOut = 10;
+                anim.SetBool("L_punch", true);
+                isAttacking = true;
+            }
+        }
+        else if (keyTimeOut == 0)
+        {
+            anim.SetBool("L_punch", false);
+            isAttacking = false;
+        }
 
-        //MH_punch
-        if (Input.GetKeyDown(KeyCode.Z))
+        //M_punch
+        if (Input.GetKeyDown(KeyCode.W) && movex == 0)
         {
             if (keyTimeOut == 0)
             {
@@ -85,6 +146,41 @@ public class Ryu_moveset : character {
         {
             anim.SetBool("MH_punch", false);
             isAttacking = false;
+        }
+
+        //H_punch
+        if (Input.GetKeyDown(KeyCode.E) && movex == 0)
+        {
+            if (keyTimeOut == 0)
+            {
+                keyTimeOut = 10;
+                anim.SetBool("MH_punch", true);
+                isAttacking = true;
+            }
+        }
+        else if (keyTimeOut == 0)
+        {
+            anim.SetBool("MH_punch", false);
+            isAttacking = false;
+        }
+
+        //crouch
+        if (Input.GetKeyDown(KeyCode.DownArrow) && movex == 0)
+        {
+            if (keyTimeOut == 0)
+            {
+                keyTimeOut = 10;
+                anim.SetBool("crouch", true);
+                isAttacking = true;
+            }
+        }
+        else if (keyTimeOut == 0 && (Input.GetKeyUp(KeyCode.DownArrow)))
+        {
+                anim.SetBool("crouch", false);
+        }
+        if (anim.GetBool("crouch") == true)
+        {
+            isAttacking = true;
         }
     }
 }
