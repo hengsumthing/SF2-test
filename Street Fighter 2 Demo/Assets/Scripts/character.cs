@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class character : MonoBehaviour {
-	public static float speed=10f;
+	public float speed=10f;
 	public static float movex;
 	public static float movey = 10f;
 	public static bool facingRight= true;

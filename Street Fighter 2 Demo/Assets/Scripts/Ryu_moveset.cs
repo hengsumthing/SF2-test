@@ -24,7 +24,7 @@ public class Ryu_moveset : character {
             {
              if (keyTimeOut == 0)
              {
-                keyTimeOut =70;
+                keyTimeOut =100;
                 anim.SetBool("Shouryuken", true);
 				r2d.AddForce(new Vector2(0,jumpForce));
                   isAttacking = true; 
@@ -39,6 +39,8 @@ public class Ryu_moveset : character {
                 anim.SetBool("Shouryuken", false);
                isAttacking = false;
             }
+
+
         //spinykick
 		if (Input.GetKeyDown(KeyCode.Z))
         {

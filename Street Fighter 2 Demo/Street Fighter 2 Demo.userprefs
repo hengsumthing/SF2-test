@@ -1,8 +1,9 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj">
+﻿<Properties StartupItem="Street Fighter 2 Demo.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Ryu_Movement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Ryu_moveset.cs">
     <Files>
-      <File FileName="Assets/Ryu_Movement.cs" Line="23" Column="3" />
+      <File FileName="Assets/Scripts/character.cs" Line="57" Column="44" />
+      <File FileName="Assets/Scripts/Ryu_moveset.cs" Line="44" Column="40" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
